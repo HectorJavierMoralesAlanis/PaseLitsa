@@ -113,7 +113,6 @@
     </style>
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-
       <section class="content">
           <div class="container-fluid">
               <div class="row">
