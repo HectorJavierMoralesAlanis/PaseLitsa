@@ -1,5 +1,5 @@
 <?php 
-    include ('DAO.php');
+    include ('../DAO.php');
     $dao = new DAO();
     $consulta = "SELECT * FROM Clases WHERE matriculaMaestro=:matricula";
     $parametros = array("matricula"=>$_GET['matricula']);
