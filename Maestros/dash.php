@@ -61,6 +61,7 @@
     }
     //Fin Funcion para ocntar la inasitencia
     
+    
     $x=0;
     $asistencias = [];
     //Inicio del Ciclo para obtener la asistencia del alumno
