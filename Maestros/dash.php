@@ -1,12 +1,13 @@
 <?php 
-    include ('DAO.php');
+    include ('../DAO.php');
 
-    //
+    //Se crea el objeto dao para la Sentencia de pase de lista
     $daoPaseLista = new DAO();
     $consultaPaseLista = "SELECT * FROM Pase_de_lista WHERE clas=:id";
     $parametrosPaseLista = array("id"=>$_GET['id']);
     $paseLista = $daoPaseLista->ejecutarConsulta($consultaPaseLista,$parametrosPaseLista);
 
+    //Inicio Funcion para Obtener el nombre del dia
     function semanaDias($dia){
         $fechaEntera = strtotime($dia);
         $dias = date('D',$fechaEntera);
@@ -30,7 +31,7 @@
         }
         return $dias;
     }
-
+    //Fin de la Funcion para obtener el nombre del dia
     $semana[0] = "Lunes";
     $semana[1] = "Martes";
     $semana[2] = "Miercoles";
@@ -49,14 +50,20 @@
     
         return $asistencias[0]['asistencias'];
     }
+    //Fin Funcion para contar la asistencia
+    
+    //Inicio Funcion para contar la inasitencia
     function inasistencia_Matricula($matricula, $dao){
         $consulta  = "SELECT COUNT(*) AS asitencias FROM Pase_de_lista WHERE Matricula =:matricula AND Asistio = 0";
         $parametros = array("matricula"=> $matricula);
         $inasistencias = $dao->ejecutarConsulta($consulta,$parametros);
         return $inasistencias[0]['inasitencias'];
     }
+    //Fin Funcion para ocntar la inasitencia
+    
     $x=0;
     $asistencias = [];
+    //Inicio del Ciclo para obtener la asistencia del alumno
     foreach ($alumnos as $alumno) {
         if(in_array($alumno['Matricula'],$asistencias)){
 
@@ -65,13 +72,18 @@
         }
         $x=$x+1;
     }
+    //Fin del Ciclo para obtener la asistencia del alumno
     
+    //Inicio del Ciclo para obtener las matriculas sin que se repitan  
     $matriculas = [];
     foreach ($alumnos as $alumno) {
         if (!in_array($alumno['Matricula'], $matriculas)) {
             $matriculas[] = $alumno['Matricula'];
         }
     }
+    //FIN del ciclo para obtener las matriculas sin que se repitan 
+
+    //Inicio de la Funcion para obtener el porcentaje de asistencia
     function porcentaje_Asistencia($matricula, $dao) {
         $asistencias = asistencia_Matricula($matricula, $dao);
         $total_clases = 5;
@@ -79,7 +91,9 @@
     
         return $porcentaje;
     }
-    
+    //Fin de la Funcion para obtener el porcentaje de asistencia
+
+    //Inicio del Ciclo para obtener el porcentaje de asistencias sin que se repita la matricula 
     $matriculas = [];
     $porcentajes = [];
     foreach ($alumnos as $alumno) {
@@ -88,7 +102,10 @@
             $porcentajes[] = porcentaje_Asistencia($alumno['Matricula'], $dao);
         }
     }    
+    //Fin del Ciclo para obtener el porcentaje de asistencia sin que se repita la matricula
 ?>
+
+<!-- Inicio del Html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -207,6 +224,7 @@
       </section>
 </div>
 </body>
+<!-- Inicio del Script -->
 <script>
     const alumnos = <?php echo json_encode($asistencias);?>;
     const nMatriculas = <?php echo json_encode($matriculas);?>;
@@ -268,4 +286,6 @@
         },
     });
 </script>
+<!-- Fin del Script -->
 </html>
+<!-- Fin del Html -->
