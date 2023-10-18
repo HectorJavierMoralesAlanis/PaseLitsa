@@ -183,7 +183,7 @@
             $fecha=date('Y-m-d');
             $dia = semanaDias($fecha);
             $hora=date('07:00:00');
-
+/*
             foreach($resultadosHora as $dias){
                 if($dias['dia'] === $dia){
                     $daoHoras = new DAO();
@@ -204,7 +204,7 @@
             $asistio = 1; 
             $daoPase = new DAO();
             $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
-            $parametrosPase = array("matricula"=>$matricula,"asistio"=>$asistio,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
+            $parametrosPase = array("matricula"=>$matricula,"asistio"=>$asistio,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$maestro['Grupo'],"clase"=>$maestro['Clase']);
             $paseMaestro = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
             break;
         }else if($maestro['Contra'] === $valor){
