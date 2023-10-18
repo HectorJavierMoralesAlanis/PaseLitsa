@@ -52,7 +52,11 @@
 
     //Inicio de la funcion para obetener la hora de la clase 
     function claseHora($dia,$hora,$clase){
-        
+        echo $dia;
+        echo "</br>";
+        echo $hora;
+        echo "</br>";
+        echo $clase;
         $daoHora = new DAO();
         $consultaHora = "SELECT * FROM Semana Where dia=:dia AND clase=:clase";
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
