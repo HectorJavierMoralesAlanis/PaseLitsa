@@ -81,7 +81,6 @@
         $fecha = date('Y-m-d');
         $hora = date('H:i:s');
         $asistencia=1;
-
         $daoInsertar = new DAO();
         $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
         $parametrosInsertar = array("matricula"=>$matricula,"asistio"=>$asistencia,"dia"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
