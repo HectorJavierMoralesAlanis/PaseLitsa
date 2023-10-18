@@ -106,8 +106,9 @@
     function insertarAsistenciaAlumnos($matricula,$clase,$grupo){
         date_default_timezone_set('America/Monterrey');
         $fecha = date('Y-m-d');
+        $dia = semanaDias($fecha);
         $hora = date('H:i:s');
-        $asistencia=1;
+        $asistencia=claseHora($hora,$dia,$clase);
 
         $daoInsertar = new DAO();
         $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
