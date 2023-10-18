@@ -18,7 +18,7 @@
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
 
         $dao = new DAO();
-        $con = "SELECT * FROM Alumnos"."WHERE Contra=:contra";
+        $con = "SELECT * FROM Alumnos WHERE Contra=:contra";
         $par = array("contra"=>"123456789");
         $resultados=$dao->insertarConsulta($con,$par);
 
