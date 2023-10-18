@@ -86,7 +86,6 @@
         $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
         $parametrosInsertar = array("matricula"=>$matricula,"asistio"=>$asistencia,"dia"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
         $paseLista = $daoInsertar->insertarConsulta($consultaInsertar,$parametrosInsertar);
-        return $paseLista;
     }
     //Fin de la funcion para insertar la asistenca
 
@@ -108,7 +107,7 @@
             $idGrupo = grupoId($matricula);
 
             //Se llama la funcion para insertar la asistencia
-            $paseList = insertarAsistenciaAlumnos($matricula,$idClase,$idGrupo);
+            insertarAsistenciaAlumnos($matricula,$idClase,$idGrupo);
             
             break;
             
