@@ -5,6 +5,7 @@
     $parametros = array("matricula"=>$_GET['matricula']);
     $clases = $dao->ejecutarConsulta($consulta,$parametros);
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
