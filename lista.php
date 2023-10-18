@@ -5,6 +5,10 @@
     $consultaAlumnos = "SELECT * FROM Alumnos";
     $alumnosLista = $daoAlumnos->ejecutarConsulta($consultaAlumnos);
 
+    foreach ($alumnosLista as $id){
+        echo $id['IDcard'];
+        echo "</br>";
+    }
     //Consulta para traer la lista de profesores
     $daoProfesores = new DAO();
     $consultaProfesores = "SELECT * FROM Profesor";
