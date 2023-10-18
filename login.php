@@ -9,7 +9,7 @@
         $daoProfesores = new DAO();
         $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula AND Contra=:contra";
         $parametrosProfesores = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
-        $resultadosProfesores = $daoProfesores->ejecutarConsulta($consultaProfesores,$parametrosProfesores);
+        $resultadosProfesores = $daoProfesores->insertarConsulta($consultaProfesores,$parametrosProfesores);
         
         //Creacion de la sentencia para traer la consulta de los alumnos
         $daoEstudiantes = new DAO();
@@ -19,7 +19,7 @@
 
         //Condicional para redirigir a la pagina indicada
         if($resultadosProfesores>0){
-            echo $resultadosProfesores;
+            //echo $resultadosProfesores;
             //header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
         }else if($resultadosEstudiantes>0){
             header("Location: http://157.245.253.25/Alumnos/dash.php?matricula=$matricula");
