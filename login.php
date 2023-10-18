@@ -8,7 +8,7 @@
         //Creacion de la sentencia para traer la consulta de los profesores
         $daoProfesores = new DAO();
         $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula AND Contra=:contra";
-        $parametrosProfesores = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
+        $parametrosProfesores = array("matricula"=>$matricula,"contra"=>$clave);
         $resultadosProfesores = $daoProfesores->insertarConsulta($consultaProfesores,$parametrosProfesores);
         
         //Creacion de la sentencia para traer la consulta de los alumnos
