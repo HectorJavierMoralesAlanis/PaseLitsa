@@ -8,7 +8,7 @@
         $consulta2 = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
         $parametros=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultados=$dao->insertarConsulta($consulta,$parametros);
-        $parametros = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
+        $parametros2 = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultados2=$dao2->insertarConsulta($consulta2,$parametros2);
         echo $resultados2;  
         if($resultados>0){
