@@ -178,34 +178,7 @@
             $parametrosHora = array("matricula"=>$matricula);
             $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
             
-            // Se establecen la hora
-            date_default_timezone_set('America/Monterrey');
-            $fecha=date('Y-m-d');
-            $dia = semanaDias($fecha);
-            $hora=date('07:00:00');
-/*
-            foreach($resultadosHora as $dias){
-                if($dias['dia'] === $dia){
-                    $daoHoras = new DAO();
-                    $consultahoras ="SELECT * FROM Semana Where Clase =: clase AND Dia =: dia";
-                    $parametroshoras  = array("clase"=>$dias['nombre'],"dia"=>$dia);
-                    $resultadoHoras = $daoHoras->insertarConsulta($consultahoras,$parametroshoras);
-                    $grupo = $dias['grupo'];
-                    $clase=$dias['nombre'];
-                }
-            }
-/*
-            foreach($resultadosHora as $horas){
-                if($horas['horaInicio']>=$hora || $horas['horaFinal']<=$hora){
-                    $grupo=$horas['grupo'];
-                    $clase=$horas['nombre'];
-                }
-            }*/
-            $asistio = 1; 
-            $daoPase = new DAO();
-            $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
-            $parametrosPase = array("matricula"=>$matricula,"asistio"=>$asistio,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$maestro['Grupo'],"clase"=>$maestro['Clase']);
-            $paseMaestro = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
+            insertarAsistenciaAlumnos($matricula,$maestro['Clase'],$maestros['Grupo']);
             break;
         }else if($maestro['Contra'] === $valor){
 
@@ -220,7 +193,6 @@
             break;
         }
         //Fin de la condicional para saber si utilizo tarjeta o contraseña
-        break;
     }
     //Fin del ciclo para ingresar la asitencia del maestro
 ?>
