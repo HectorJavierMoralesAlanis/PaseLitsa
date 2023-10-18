@@ -87,7 +87,8 @@
                                     <!-- Fin Header Tabla-->
                                     <!-- Inicio del body de la tabla -->
                                     <tbody>
-                                        <?php echo $alumnos; 
+                                        <?php echo $alumnos;
+                                        print_r($alumnos); 
                                         foreach($alumnos as $alumno){?>
                                         <tr>
                                             <th><?php echo $alumno['Clase'];?></th>
