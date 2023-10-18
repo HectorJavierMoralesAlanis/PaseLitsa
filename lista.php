@@ -105,7 +105,7 @@
         date_default_timezone_set('America/Monterrey');
         $fecha = date('Y-m-d');
         $dia = semanaDias($fecha);
-        $hora = date('10:20:00');
+        $hora = date('H:i:s');
         $asistencia=claseHora($dia,$hora,$clase);
         //echo $asistencia;
         $daoInsertar = new DAO();
@@ -114,7 +114,6 @@
         $daoInsertar->insertarConsulta($consultaInsertar,$parametrosInsertar);
     }
     //Fin de la funcion para insertar la asistenca
-
     //Inicio del ciclo para ingresar la asistencia de los alumnos
     foreach($alumnosLista as $alumno){
         //Inicio de la condicional para saber si utilizo tarjeta o contraseña
