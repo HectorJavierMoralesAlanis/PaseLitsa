@@ -164,26 +164,26 @@
                                     $aux1=0;?>
                                   <?php for($i=0;$i<5;$i++){?>
                                     <?php //echo $semana[$i]?>
-                                    <?php foreach ($alumnos as $alumno) { ?>
+                                    <?php foreach ($paseLista as $alumno) { ?>
                                     <tr>
                                         <?php $m=0; ?>
                                     <?php $aux=$alumno['Fecha']?>
                                     <?php $auxDia=semanaDias($alumno['Fecha'])?>
                                     <?php $auxSemana?>
-                                    <?php //if ($auxDia===$semana[$i]){?>
+                                    <?php if ($auxDia===$semana[$i]){?>
                                         <td><?php echo $semana[$i];?></td>
                                         <td><?php echo $alumno['Matricula']?></td>
                                         <td><?php echo $alumno['Asistio']; ?></td>
                                         <td><?php echo $alumno['Fecha']; ?></td>
                                         <td><?php echo $alumno['hora'];?></td>
-                                        <?php //$asistenciasTabla[$alumno['Matricula']][$i]=$semana[$i];?>
-                                            <?php //if(in_array($alumno['Matricula'],$matriculasAsistidas)){?>
+                                        <?php $asistenciasTabla[$alumno['Matricula']][$i]=$semana[$i];?>
+                                            <?php if(in_array($alumno['Matricula'],$matriculasAsistidas)){?>
                                                 <?php //echo "igual" ?>
-                                            <?php //}else { ?>
-                                                <?php //$matriculasAsistidas[$aux1]=$alumno['Matricula'];?>
-                                                <?php //$aux1=$aux1+1;?>
-                                            <?php //}?>
-                                    <?php //}?>
+                                            <?php }else { ?>
+                                                <?php $matriculasAsistidas[$aux1]=$alumno['Matricula'];?>
+                                                <?php $aux1=$aux1+1;?>
+                                            <?php }?>
+                                    <?php }?>
                                         </tr>
                                     <?php }?>
                                 <?php //}?>
