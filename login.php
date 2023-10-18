@@ -5,13 +5,13 @@
         //Creacion de la sentencia para traer la consulta de los profesores
         $daoProfesores = new DAO();
         $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
-        $parametrosProfesores = array("matricula"=>$_POST['matricula'],"contra"=>$_GET['clave']);
+        $parametrosProfesores = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultadosProfesores = $daoProfesores->insertarConsulta($consultaProfesores,$parametrosProfesores);
         
         //Creacion de la sentencia para traer la consulta de los alumnos
         $daoEstudiantes = new DAO();
         $consultaEstudiantes = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
-        $parametrosEstudiantes=array("matricula"=>$_GET['matricula'],"contra"=>$_GET['clave']);
+        $parametrosEstudiantes=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
 
         //Condicional para redirigir a la pagina indicada
