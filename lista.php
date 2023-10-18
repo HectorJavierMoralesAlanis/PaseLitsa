@@ -8,7 +8,7 @@
     //Consulta para traer la lista de profesores
     $daoProfesores = new DAO();
     $consultaProfesores = "SELECT * FROM Profesor";
-    $maestrosLista = $daoMaestro->ejecutarConsulta($consultaProfesores);
+    $maestrosLista = $daoProfesores->ejecutarConsulta($consultaProfesores);
 
     //Obtengo el valor para la asistencia
     $valor = $_POST["uid"];
