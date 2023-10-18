@@ -62,6 +62,10 @@
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
         $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
         foreach($resultadoHora as $horas){
+            echo "</br>";
+            echo $horas['HoraInicio'];
+            echo "</br>";
+            echo $horas["HoraFinal"];
             if($horas['HoraInicio']>=$hora || $horas['HoraFinal']<=$hora){
                 $asistio=1;
             }else{
