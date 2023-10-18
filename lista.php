@@ -190,6 +190,8 @@
                     $consultahoras ="SELECT * FROM Semana Where Clase =: clase AND Dia =: dia";
                     $parametroshoras  = array("clase"=>$dias['nombre'],"dia"=>$dia);
                     $resultadoHoras = $daoHoras->insertarConsulta($consultahoras,$parametroshoras);
+                    $grupo = $dias['grupo'];
+                    $clase=$dias['nombre'];
                 }
             }
 /*
