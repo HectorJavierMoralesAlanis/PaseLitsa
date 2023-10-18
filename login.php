@@ -5,6 +5,7 @@
         $dao2 = new DAO();
         $matricula=$_POST['matricula'];
         echo $matricula;
+        
         $consulta = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
         $consulta2 = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
         $parametros=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
