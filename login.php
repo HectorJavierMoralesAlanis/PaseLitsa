@@ -2,6 +2,7 @@
     include ('DAO.php');
     if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
 
+        $matricula = $_GET['matricula'];
         //Creacion de la sentencia para traer la consulta de los profesores
         $daoProfesores = new DAO();
         $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
