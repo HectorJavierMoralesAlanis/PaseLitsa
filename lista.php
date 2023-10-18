@@ -76,23 +76,12 @@
     //Fin de la funcion para obtener el id del grupo
 
     //Inicio de la funcion para insertar la asistencia
-    function insertarAsistenciaAlumnos($matricula,$grupo,$clase){
+    function insertarAsistenciaAlumnos($matricula,$clase,$grupo){
         date_default_timezone_set('America/Monterrey');
         $fecha = date('Y-m-d');
         $hora = date('H:i:s');
         $asistencia=1;
-        echo "</br>";
-        echo $matricula;
-        echo "</br>";
-        echo $asistencia;
-        echo "</br>"; 
-        echo $fecha;
-        echo "</br>";
-        echo $hora;
-        echo "</br>";
-        echo $grupo;
-        echo "</br>";
-        echo $clase;  
+ 
         $daoInsertar = new DAO();
         $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
         $parametrosInsertar = array("matricula"=>$matricula,"asistio"=>$asistencia,"dia"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
