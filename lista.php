@@ -59,7 +59,6 @@
         $resultadoHora = $daoHora->ejecutarConsulta($consultaHora,$parametrosHora);
         foreach($resultadoHora as $horas){
             if($hora>=$horas['HoraInicio'] and $hora<=$horas['HoraFinal']){
-                echo "Ingresado";
                 $asistio=1;
             }else{
                 $asistio=0;
@@ -120,6 +119,8 @@
         //Inicio de la condicional para saber si utilizo tarjeta o contraseña
         if($alumno['IDcard'] === $valor){
             
+            //Mensaje para que comprube que se ingreso con tarjeta
+            echo "Ingresado";
 
             //Variable para obtener la matricula del alumno
             $matricula = $alumno['Matricula'];
