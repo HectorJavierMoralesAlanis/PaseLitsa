@@ -108,17 +108,6 @@
         $fecha = date('Y-m-d');
         $hora = date('H:i:s');
         $asistencia=1;
-        echo $matricula;
-        echo "</br>";
-        echo $asistencia;
-        echo "</br>";
-        echo $fecha;
-        echo "</br>";
-        echo $hora;
-        echo "</br>";
-        echo $clase;
-        echo "</br>";
-        echo $grupo;
 
         $daoInsertar = new DAO();
         $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
@@ -184,11 +173,6 @@
             //Se obtiene la matricula del maestro
             $matricula=$maestro['Matricula'];
 
-            //Se obtiene la hora de la materia
-           /* $consultaHora = "SELECT * FROM Clases Where matriculaMaestro=:matricula";
-            $parametrosHora = array("matricula"=>$matricula);
-            $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
-            */
             insertarAsistenciaAlumnos($matricula,$maestro['Clase'],$maestro['Grupo']);
             break;
         }else if($maestro['Contra'] === $valor){
@@ -196,11 +180,8 @@
             echo "Ingresado";
             
             $matricula = $maestro['Matricula'];
-            
-            $daoPase = new DAO();
-            $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asistio,Fecha,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
-            $parametrosPase = array("matricula"=>$matricula,"asistio"=>$asistio,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
-            $paseMaestro = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+        
+            insertarAsistenciaAlumnos($matricula,$maestro['Clase'],$maestro['Grupo']);
             break;
         }
         //Fin de la condicional para saber si utilizo tarjeta o contraseña
