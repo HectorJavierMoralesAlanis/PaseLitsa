@@ -3,7 +3,8 @@
     if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
 
         $matricula = $_POST['matricula'];
-
+        echo $matricula;
+        echo $_POST['clave'];
         //Creacion de la sentencia para traer la consulta de los profesores
         $daoProfesores = new DAO();
         $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula AND Contra=:contra";
