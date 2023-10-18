@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="d-md-block d-grid text-end mt-4 pt-2">
-                        <button type="submit" name="enviar" class="btn btn-primary" style="padding-left: 2.5rem; padding-right: 2.5rem" data-bind="click: login">
+                        <button type="submit" name="enviar" class="btn btn-primary" style="padding-left: 2.5rem; padding-right: 2.5rem">
                             Aceptar
                         </button>
                     </div>
