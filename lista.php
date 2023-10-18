@@ -189,7 +189,7 @@
             $parametrosHora = array("matricula"=>$matricula);
             $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
             */
-            insertarAsistenciaAlumnos($matricula,$maestro['Clase'],$maestros['Grupo']);
+            insertarAsistenciaAlumnos($matricula,$maestro['Clase'],$maestro['Grupo']);
             break;
         }else if($maestro['Contra'] === $valor){
 
