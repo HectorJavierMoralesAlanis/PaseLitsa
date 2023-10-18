@@ -1,7 +1,7 @@
 <?php 
     include ('../DAO.php');
     $dao = new DAO();
-    $consulta = "SELECT * FROM Clases WHERE matriculaMaestro=:matricula";
+    $consulta = "SELECT * FROM Clase WHERE matriculaMaestro=:matricula";
     $parametros = array("matricula"=>$_GET['matricula']);
     $clases = $dao->ejecutarConsulta($consulta,$parametros);
 ?>
