@@ -1,6 +1,6 @@
 <?php
     include ('DAO.php');
-    if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
+    if(isset($_POST['matricula'],$_POST['clave'])){
         $dao = new DAO();
         $dao2 = new DAO();
         $matricula=$_POST['matricula'];
