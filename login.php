@@ -11,7 +11,9 @@
         $resultados2=$dao2->ejecutarConsulta($consulta2,$parametros);
         echo $resultados2;  
         if($resultados>0){
-            header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
+            echo "Entro ";
+            echo $resultados;
+            //header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
         }else if($resultados2>0){
             header("Location: http://157.245.253.25/Alumnos/dash.php?matricula=$matricula");
         }else{
