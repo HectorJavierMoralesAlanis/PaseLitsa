@@ -105,7 +105,7 @@
         date_default_timezone_set('America/Monterrey');
         $fecha = date('Y-m-d');
         $dia = semanaDias($fecha);
-        $hora = date('07:00:00');
+        $hora = date('10:00:00');
         $asistencia=claseHora($dia,$hora,$clase);
         //echo $asistencia;
         $daoInsertar = new DAO();
