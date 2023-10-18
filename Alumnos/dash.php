@@ -87,7 +87,12 @@
                                     <!-- Fin Header Tabla-->
                                     <!-- Inicio del body de la tabla -->
                                     <tbody>
-                                        
+                                        <?php foreach($alumnos as $alumno){?>
+                                            <th><?php echo $alumno['Clase']?></th>
+                                            <th><?php echo $alumno['Dia']?></th>
+                                            <th><?php echo $alumno['Hora']?></th>
+                                            <th><?php echo $alumno['Asistio']?></th>
+                                        <?php }?>
                                     </tbody>
                                     <!-- Fin del body de la tabla-->
                                 </table>
