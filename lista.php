@@ -60,7 +60,7 @@
         $daoHora = new DAO();
         $consultaHora = "SELECT * FROM Semana WHERE Dia=:dia AND Clase=:clase";
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
-        $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
+        $resultadoHora = $daoHora->ejecutarConsulta($consultaHora,$parametrosHora);
         foreach($resultadoHora as $horas){
 
             echo "</br>";
