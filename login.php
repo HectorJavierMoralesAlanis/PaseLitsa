@@ -16,7 +16,8 @@
         $consultaEstudiantes = "SELECT * FROM Alumnos Where Matricula=:matricula AND Contra=:contra";
         $parametrosEstudiantes=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
-
+        echo "</br>";
+        echo $resultadosEstudiantes;
         //Condicional para redirigir a la pagina indicada
         if($resultadosProfesores>0){
             //echo $resultadosProfesores;
