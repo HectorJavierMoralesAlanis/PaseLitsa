@@ -6,6 +6,7 @@
     $consulta = "SELECT * FROM Pase_de_lista Where Matricula=:id";
     $parametros = array("id"=>$_GET['matricula']);
     $alumnos = $dao->ejecutarConsulta($consulta,$parametros);
+    $alumnos = array_unique($alumnos);
 
     //Funcion para Obtener el nombre del dia
     function semanaDias($dia){
