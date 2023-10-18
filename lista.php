@@ -60,7 +60,7 @@
         foreach($resultadoHora as $horas){
             if($horas['HoraInicio']>=$hora && $horas['HoraFinal']<=$hora){
                 $asistio=1;
-            }else if($horas['HoraInicio']<=$hora && $horas['HoraFinal']>=$hora){
+            }else{
                 $asistio=0;
             }
         }
