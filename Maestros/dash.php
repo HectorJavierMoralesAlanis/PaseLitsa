@@ -4,7 +4,6 @@
     //Se crea el objeto dao para la Sentencia de pase de lista
     $daoPaseLista = new DAO();
     $consultaPaseLista = "SELECT * FROM Pase_de_lista WHERE Clase=:id";
-    
     $parametrosPaseLista = array("id"=>$_GET['id']);
     $paseLista = $daoPaseLista->ejecutarConsulta($consultaPaseLista,$parametrosPaseLista);
 
