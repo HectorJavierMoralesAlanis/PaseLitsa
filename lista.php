@@ -149,7 +149,7 @@
             //Se obtiene la hora de la materia
             $consultaHora = "SELECT * FROM Clases Where matriculaMaestro=:matricula";
             $parametrosHora = array("matricula"=>$matricula);
-            $resultadoHora = $daoHora->ejecutarConsulta($consultaHora,$parametrosHora);
+            $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
             
             foreach($resultadosHora as $horas){
                 if($horas['horaInicio']>=$hora || $horas['horaFinal']<=$hora){
@@ -160,7 +160,7 @@
             $daoPase = new DAO();
             $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asitio,Fecha,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
             $parametrosPase = array("matricula"=>$matricula,"asistio"=>$asistio,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
-            $paseMaestro = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+            $paseMaestro = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
             break;
         }else if($maestro['Contra'] === $valor){
 
