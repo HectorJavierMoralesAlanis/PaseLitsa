@@ -1,18 +1,23 @@
 <?php
     include ('DAO.php');
     if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
-        $dao = new DAO();
-        $dao2 = new DAO();
-        $matricula=$_POST['matricula'];
-        $consulta = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
-        $consulta2 = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
-        $parametros=array("matricula"=>$_GET['matricula'],"contra"=>$_GET['clave']);
-        $resultados=$dao->insertarConsulta($consulta,$parametros);
-        $resultados2=$dao2->insertarConsulta($consulta2,$parametros);
-        echo $resultados2;  
-        if($resultados>0){
+
+        //Creacion de la sentencia para traer la consulta de los profesores
+        $daoProfesores = new DAO();
+        $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
+        $parametrosProfesores = array("matricula"=>$_POST['matricula'],"contra"=>$_GET['clave']);
+        $resultadosProfesores = $daoProfesores->insertarConsulta($consultaProfesores,$parametrosProfesores);
+        
+        //Creacion de la sentencia para traer la consulta de los alumnos
+        $daoEstudiantes = new DAO();
+        $consultaEstudiantes = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
+        $parametrosEstudiantes=array("matricula"=>$_GET['matricula'],"contra"=>$_GET['clave']);
+        $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
+
+        //Condicional para redirigir a la pagina indicada
+        if($resultadosProfesores>0){
             header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
-        }else if($resultados2>0){
+        }else if($resultadosEstudiantes>0){
             header("Location: http://157.245.253.25/Alumnos/dash.php?matricula=$matricula");
         }else{
             header("Location: http://157.245.253.25/login.php");
