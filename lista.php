@@ -62,7 +62,6 @@
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
         $resultadoHora = $daoHora->ejecutarConsulta($consultaHora,$parametrosHora);
         foreach($resultadoHora as $horas){
-
             echo "</br>";
             echo $horas['HoraInicio'];
             echo "</br>";
