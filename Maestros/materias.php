@@ -35,7 +35,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($clases as $clases){?>
+                                        <?php foreach($clases as $clase){?>
                                             <tr>
                                                 <td><?php echo $clase['id'];?></td>
                                                 <td><?php echo $clase['nombre'];?></td>
