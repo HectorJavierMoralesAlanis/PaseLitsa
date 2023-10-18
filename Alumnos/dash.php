@@ -4,7 +4,7 @@
     //Se crea el objeto dao para la Sentencia de pase de lista
     $dao =  new DAO();
     $consulta = "SELECT * FROM Pase_de_lista Where Matricula=:id";
-    $parametros = array("id"=>$_POST['matricula']);
+    $parametros = array("id"=>$_GET['matricula']);
     $alumnos = $dao->ejecutarConsulta($consulta,$parametros);
 
     //Funcion para Obtener el nombre del dia
@@ -87,9 +87,7 @@
                                     <!-- Fin Header Tabla-->
                                     <!-- Inicio del body de la tabla -->
                                     <tbody>
-                                        <?php echo $alumnos;
-                                        print_r($alumnos); 
-                                        foreach($alumnos as $alumno){?>
+                                        <?php foreach($alumnos as $alumno){?>
                                         <tr>
                                             <th><?php echo $alumno['Clase'];?></th>
                                             <th><?php echo $alumno['Dia'];?></th>
