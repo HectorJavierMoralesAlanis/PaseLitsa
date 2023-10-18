@@ -58,7 +58,7 @@
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
         $resultadoHora = $daoHora->ejecutarConsulta($consultaHora,$parametrosHora);
         foreach($resultadoHora as $horas){
-            if($horas['HoraInicio']>=$hora and $horas['HoraFinal']<=$hora){
+            if($hora>=$horas['HoraInicio'] and $hora<=$horas['HoraFinal']){
                 $asistio=1;
             }else{
                 $asistio=0;
