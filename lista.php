@@ -134,7 +134,7 @@
 
             break;
             
-        }break;
+        }
         //Fin de la condicional para saber si utilizo tarjetra o contraseña
     }
     //Fin del ciclo para ingresar la asistencia de los alumnos 
