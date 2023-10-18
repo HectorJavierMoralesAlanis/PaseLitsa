@@ -3,15 +3,16 @@
     if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
 
         $matricula = $_GET['matricula'];
+
         //Creacion de la sentencia para traer la consulta de los profesores
         $daoProfesores = new DAO();
-        $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
+        $consultaProfesores = "SELECT * FROM Profesores Where Matricula=:matricula AND Contra=:contra";
         $parametrosProfesores = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultadosProfesores = $daoProfesores->insertarConsulta($consultaProfesores,$parametrosProfesores);
         
         //Creacion de la sentencia para traer la consulta de los alumnos
         $daoEstudiantes = new DAO();
-        $consultaEstudiantes = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
+        $consultaEstudiantes = "SELECT * FROM Alumnos Where Matricula=:matricula AND Contra=:contra";
         $parametrosEstudiantes=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
 
