@@ -51,6 +51,7 @@
                                                     <td><?php echo $clase['nombre'];?></td>
                                                     <td class="align-middle"><a href="./dash.php?id=<?php echo $clase['id']?>&matricula=<?php echo $clase['matriculaMaestro']?>" method="POST" class="btn btn-info btn-block btn-sm">Ingresar</a></td>
                                                 </tr>
+                                                
                                                 <?php $arrNombreMaterias[] = $clase['nombre'];
                                                     $aux = 1+$aux;?>
                                             <?php }?>
