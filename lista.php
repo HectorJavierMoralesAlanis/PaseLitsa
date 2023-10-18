@@ -56,9 +56,9 @@
         $daoHora = new DAO();
         $consultaHora = "SELECT * FROM Semana Where dia=:dia AND clase=:clase";
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
-        $resultadoHora = $daoHora->ejecutarConsulta($consultaHora,$parametrosHora);
+        $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
         foreach($resultadoHora as $horas){
-            if($horas['horaInicio']>=$hora || $horas['horaFinal']<=$hora){
+            if($horas['HoraInicio']>=$hora || $horas['HoraFinal']<=$hora){
                 $asistio=1;
             }else{
                 $asistio=0;
