@@ -18,8 +18,9 @@
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
 
         $dao = new DAO();
-        $con = "SELECT * FROM Alumnos";
-        $resultados=$dao->ejecutarConsulta($con);
+        $con = "SELECT * FROM Alumnos"."WHERE Contra=:contra";
+        $par = array("contra"=>"123456789");
+        $resultados=$dao->insertarConsulta($con,$par);
 
         foreach($resultados as $id){
             echo $id['id'];
