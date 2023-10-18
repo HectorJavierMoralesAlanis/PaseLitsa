@@ -4,11 +4,12 @@
         $dao = new DAO();
         $dao2 = new DAO();
         $matricula=$_POST['matricula'];
+        echo $matricula;
         $consulta = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
         $consulta2 = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
-        $parametros=array("matricula"=>$_POST['Matricula'],"Contra"=>$_POST['clave']);
+        $parametros=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultados=$dao->insertarConsulta($consulta,$parametros);
-        $parametros2 = array("matricula"=>$_POST['Matricula'],"Contra"=>$_POST['clave']);
+        $parametros2 = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultados2=$dao2->insertarConsulta($consulta2,$parametros2);
         echo $resultados2;  
         if($resultados>0){
