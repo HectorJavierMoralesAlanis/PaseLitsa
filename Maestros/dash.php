@@ -5,9 +5,10 @@
     $daoPaseLista = new DAO();
     $consultaPaseLista = "SELECT * FROM Pase_de_lista WHERE Clase=:id";
     
-    $parametrosPaseLista = array("id"=>$_GET['matricula']);
+    $parametrosPaseLista = array("id"=>$_GET['id']);
     $paseLista = $daoPaseLista->ejecutarConsulta($consultaPaseLista,$parametrosPaseLista);
 
+    print_r($paseLista);
     //Inicio Funcion para Obtener el nombre del dia
     function semanaDias($dia){
         $fechaEntera = strtotime($dia);
