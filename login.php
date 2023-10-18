@@ -2,7 +2,7 @@
     include ('DAO.php');
     if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
 
-        $matricula = $_GET['matricula'];
+        $matricula = $_POST['matricula'];
 
         //Creacion de la sentencia para traer la consulta de los profesores
         $daoProfesores = new DAO();
