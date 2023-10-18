@@ -17,31 +17,8 @@
         $parametrosEstudiantes=array("matricula"=>$matricula,"contra"=>$clave);
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
 
-        $dao = new DAO();
-        $con = "SELECT * FROM Alumnos WHERE Contra=:contra";
-        $par = array("contra"=>"1234567");
-        $resultados=$dao->insertarConsulta($con,$par);
-
-        foreach($resultados as $id){
-            echo $id['id'];
-            echo " ";
-            echo $id['idCard'];
-            echo " ";
-            echo $id['Matricula'];
-            echo " ";
-            echo $id['Contra'];
-            echo " ";
-            echo $id['Grupo'];
-            echo " ";
-            echo $id['Clase'];
-            echo "</br>";
-        }
-
-        echo "</br>";
-        echo $resultadosEstudiantes;
         //Condicional para redirigir a la pagina indicada
         if($resultadosProfesores>0 && $resultadosEstudiantes == 0){
-            //echo $resultadosProfesores;
             header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
         }else if($resultadosEstudiantes>0){
             header("Location: http://157.245.253.25/Alumnos/dash.php?matricula=$matricula");
