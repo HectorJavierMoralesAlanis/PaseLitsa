@@ -1,17 +1,14 @@
 <?php
     include ('DAO.php');
-    if(isset($_POST['matricula'],$_POST['clave'])){
+    if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
         $dao = new DAO();
         $dao2 = new DAO();
         $matricula=$_POST['matricula'];
-        echo $matricula;
-        
         $consulta = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
         $consulta2 = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
         $parametros=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
         $resultados=$dao->insertarConsulta($consulta,$parametros);
-        $parametros2 = array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
-        $resultados2=$dao2->insertarConsulta($consulta2,$parametros2);
+        $resultados2=$dao2->insertarConsulta($consulta2,$parametros);
         echo $resultados2;  
         if($resultados>0){
             echo "Entro ";
