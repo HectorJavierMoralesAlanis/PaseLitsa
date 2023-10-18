@@ -13,6 +13,33 @@
     //Obtengo el valor para la asistencia
     $valor = $_POST["uid"];
 
+
+    //Inicio Funcion para Obtener el nombre del dia
+    function semanaDias($dia){
+        $fechaEntera = strtotime($dia);
+        $dias = date('D',$fechaEntera);
+        switch($dias){
+            case "Mon":
+                $dias = "Lunes";
+                break;
+            case "Tue":
+                $dias = "Martes";
+                break;
+            case "Wed":
+                $dias = "Miercoles";
+                break;
+            case "Thu":
+                $dias = "Jueves";
+                break;
+            case "Fri":
+                $dias = "Viernes";
+                break;
+            
+        }
+        return $dias;
+    }
+    //Fin de la Funcion para obtener el nombre del dia
+
     //Inicio de la funcion para obtener el nombre de la clase
     function nombreClase($id){
         $daoNombreClase = new DAO();
@@ -154,13 +181,25 @@
             // Se establecen la hora
             date_default_timezone_set('America/Monterrey');
             $fecha=date('Y-m-d');
+            $dia = semanaDias($fecha);
             $hora=date('07:00:00');
+
+            foreach($resultadosHora as $dias){
+                if($dias['dia'] === $dia){
+                    $daoHoras = new DAO();
+                    $consultahoras ="SELECT * FROM Semana Where Clase =: clase AND Dia =: dia";
+                    $parametroshoras  = array("clase"=>$dias['nombre'],"dia"=>$dia);
+                    $resultadoHoras = $daoHoras->insertarConsulta($consultahoras,$parametroshoras);
+                    //$horaInicio=
+                }
+            }
+/*
             foreach($resultadosHora as $horas){
                 if($horas['horaInicio']>=$hora || $horas['horaFinal']<=$hora){
                     $grupo=$horas['grupo'];
                     $clase=$horas['nombre'];
                 }
-            }
+            }*/
             $asistio = 1; 
             $daoPase = new DAO();
             $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asitio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
