@@ -49,7 +49,7 @@
                                                 <tr>
                                                     <td><?php echo $aux;?></td>
                                                     <td><?php echo $clase['nombre'];?></td>
-                                                    <td class="align-middle"><a href="./dash.php?id=<?php echo $clase['Clase']?>&matricula=<?php echo $clase['matriculaMaestro']?>" method="POST" class="btn btn-info btn-block btn-sm">Ingresar</a></td>
+                                                    <td class="align-middle"><a href="./dash.php?id=<?php echo $clase['nombre']?>&matricula=<?php echo $clase['matriculaMaestro']?>" method="POST" class="btn btn-info btn-block btn-sm">Ingresar</a></td>
                                                 </tr>
                                                 
                                                 <?php $arrNombreMaterias[] = $clase['nombre'];
