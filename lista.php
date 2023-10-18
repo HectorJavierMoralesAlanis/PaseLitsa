@@ -157,6 +157,7 @@
                     $clase=$horas['id'];
                 }
             }
+            $asistio = 1; 
             $daoPase = new DAO();
             $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asitio,Fecha,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
             $parametrosPase = array("matricula"=>$matricula,"asistio"=>$asistio,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
