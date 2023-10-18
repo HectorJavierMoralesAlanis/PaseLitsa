@@ -96,7 +96,6 @@
         foreach($grupoIdArreglo as $id){
             $grupoId = $id['Grupo'];
         }
-
         return $grupoId;
     }
     //Fin de la funcion para obtener el id del grupo
