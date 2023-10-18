@@ -51,10 +51,10 @@
         $claseArregloId = $daoClase->ejecutarConsulta($consultaIdclase,$parametrosIdclase);
         
         foreach($claseArregloId as $id){
-            $claseId = $id['Clase'];
+            $claseIdNombre = $id['Clase'];
         }
-
-        return $claseId;
+        
+        return $claseIdNombre;
     }
     //Fin de la funcinon par aobetner el id de la clase
 
