@@ -16,6 +16,13 @@
         $consultaEstudiantes = "SELECT * FROM Alumnos Where Matricula=:matricula AND Contra=:contra";
         $parametrosEstudiantes=array("matricula"=>$matricula,"contra"=>$clave);
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
+
+        $dao = new DAO();
+        $con = "SELECT * FROM Alumnos";
+        $resultados=$dao->ejecutarConsulta($con);
+
+        print_r($resultados);
+
         echo "</br>";
         echo $resultadosEstudiantes;
         //Condicional para redirigir a la pagina indicada
