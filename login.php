@@ -19,7 +19,7 @@
 
         $dao = new DAO();
         $con = "SELECT * FROM Alumnos WHERE Contra=:contra";
-        $par = array("contra"=>"123456789");
+        $par = array("contra"=>"1234567");
         $resultados=$dao->insertarConsulta($con,$par);
 
         foreach($resultados as $id){
@@ -40,7 +40,7 @@
         echo "</br>";
         echo $resultadosEstudiantes;
         //Condicional para redirigir a la pagina indicada
-        if($resultadosProfesores>0){
+        if($resultadosProfesores>0 && $resultadosEstudiantes == 0){
             //echo $resultadosProfesores;
             //header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
         }else if($resultadosEstudiantes>0){
