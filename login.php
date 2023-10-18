@@ -21,7 +21,20 @@
         $con = "SELECT * FROM Alumnos";
         $resultados=$dao->ejecutarConsulta($con);
 
-        print_r($resultados);
+        foreach($resultado as $id){
+            echo $id['id'];
+            echo " ";
+            echo $id['idCard'];
+            echo " ";
+            echo $id['Matricula'];
+            echo " ";
+            echo $id['Contra'];
+            echo " ";
+            echo $id['Grupo'];
+            echo " ";
+            echo $id['Clase'];
+            echo "</br>";
+        }
 
         echo "</br>";
         echo $resultadosEstudiantes;
