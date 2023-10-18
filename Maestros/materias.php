@@ -10,6 +10,8 @@
 
     //Ciclo para obtener los nombres de las clases sin repetir 
     $arrNombreMaterias = [];
+
+    $aux = 1;
 ?>
 
 <html lang="en">
@@ -45,11 +47,12 @@
                                         <?php foreach($clases as $clase){?>
                                             <?php if(!in_array($clase['nombre'],$arrNombreMaterias)){?>
                                                 <tr>
-                                                    <td><?php echo $clase['id'];?></td>
+                                                    <td><?php echo $aux;?></td>
                                                     <td><?php echo $clase['nombre'];?></td>
                                                     <td class="align-middle"><a href="./dash.php?id=<?php echo $clase['id']?>&matricula=<?php echo $clase['matriculaMaestro']?>" method="POST" class="btn btn-info btn-block btn-sm">Ingresar</a></td>
                                                 </tr>
-                                                <?php $arrNombreMaterias[] = $clase['nombre']?>
+                                                <?php $arrNombreMaterias[] = $clase['nombre'];
+                                                    $aux = 1+$aux;?>
                                             <?php }?>
                                         <?php }?>
                                     </tbody>
