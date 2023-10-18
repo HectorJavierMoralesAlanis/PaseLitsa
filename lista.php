@@ -83,7 +83,7 @@
         $asistencia=1;
 
         $daoInsertar = new DAO();
-        $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asitencia,Fecha,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
+        $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
         $parametrosInsertar = array("matricula"=>$matricula,"asistio"=>$asistencia,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
         $paseLista = $daoInsertar->ejecutarConsulta($consultaInsertar,$parametrosInsertar);
     }
