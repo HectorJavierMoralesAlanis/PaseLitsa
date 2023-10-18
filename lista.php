@@ -154,7 +154,7 @@
             foreach($resultadosHora as $horas){
                 if($horas['horaInicio']>=$hora || $horas['horaFinal']<=$hora){
                     $grupo=$horas['grupo'];
-                    $clase=$horas['id'];
+                    $clase=$horas['nombre'];
                 }
             }
             $asistio = 1; 
