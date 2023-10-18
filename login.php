@@ -21,7 +21,7 @@
         $con = "SELECT * FROM Alumnos";
         $resultados=$dao->ejecutarConsulta($con);
 
-        foreach($resultado as $id){
+        foreach($resultados as $id){
             echo $id['id'];
             echo " ";
             echo $id['idCard'];
