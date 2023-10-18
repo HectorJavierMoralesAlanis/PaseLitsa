@@ -174,8 +174,8 @@
                                         <td><?php echo $semana[$i];?></td>
                                         <td><?php echo $alumno['Matricula']?></td>
                                         <td><?php echo $alumno['Asistio']; ?></td>
-                                        <td><?php echo $alumno['Fecha']; ?></td>
-                                        <td><?php echo $alumno['hora'];?></td>
+                                        <td><?php echo $alumno['Dia']; ?></td>
+                                        <td><?php echo $alumno['Hora'];?></td>
                                         <?php $asistenciasTabla[$alumno['Matricula']][$i]=$semana[$i];?>
                                             <?php if(in_array($alumno['Matricula'],$matriculasAsistidas)){?>
                                                 <?php //echo "igual" ?>
