@@ -7,13 +7,11 @@
         $consulta = "SELECT * FROM Profesores Where Matricula=:matricula and Contra=:contra";
         $consulta2 = "SELECT * FROM Alumnos Where Matricula=:matricula and Contra=:contra";
         $parametros=array("matricula"=>$_POST['matricula'],"contra"=>$_POST['clave']);
-        $resultados=$dao->insertarConsulta($consulta,$parametros);
-        $resultados2=$dao2->insertarConsulta($consulta2,$parametros);
+        $resultados=$dao->ejecutarConsulta($consulta,$parametros);
+        $resultados2=$dao2->ejecutarConsulta($consulta2,$parametros);
         echo $resultados2;  
         if($resultados>0){
-            echo "Entro ";
-            echo $resultados;
-            //header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
+            header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
         }else if($resultados2>0){
             header("Location: http://157.245.253.25/Alumnos/dash.php?matricula=$matricula");
         }else{
