@@ -52,20 +52,12 @@
 
     //Inicio de la funcion para obetener la hora de la clase 
     function claseHora($dia,$hora,$clase){
-        echo $dia;
-        echo "</br>";
-        echo $hora;
-        echo "</br>";
-        echo $clase;
+
         $daoHora = new DAO();
         $consultaHora = "SELECT * FROM Semana WHERE Dia=:dia AND Clase=:clase";
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
         $resultadoHora = $daoHora->ejecutarConsulta($consultaHora,$parametrosHora);
         foreach($resultadoHora as $horas){
-            echo "</br>";
-            echo $horas['HoraInicio'];
-            echo "</br>";
-            echo $horas["HoraFinal"];
             if($horas['HoraInicio']>=$hora || $horas['HoraFinal']<=$hora){
                 $asistio=1;
             }else{
