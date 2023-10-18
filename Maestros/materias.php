@@ -1,9 +1,15 @@
 <?php 
     include ('../DAO.php');
+    
+
+    //Se crea el objeto para realizar la consulta para traer las clases que coincidan con la matricula
     $dao = new DAO();
     $consulta = "SELECT * FROM Clase WHERE matriculaMaestro=:matricula";
     $parametros = array("matricula"=>$_GET['matricula']);
     $clases = $dao->ejecutarConsulta($consulta,$parametros);
+
+    //Ciclo para obtener los nombres de las clases sin repetir 
+    $arrNombreMaterias = [];
 ?>
 
 <html lang="en">
@@ -37,11 +43,14 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach($clases as $clase){?>
-                                            <tr>
-                                                <td><?php echo $clase['id'];?></td>
-                                                <td><?php echo $clase['nombre'];?></td>
-                                                <td class="align-middle"><a href="./dash.php?id=<?php echo $clase['id']?>&matricula=<?php echo $clase['matriculaMaestro']?>" method="POST" class="btn btn-info btn-block btn-sm">Ingresar</a></td>
-                                            </tr>
+                                            <?php if(!in_array($clase['nombre'],$arrNombreMaterias)){?>
+                                                <tr>
+                                                    <td><?php echo $clase['id'];?></td>
+                                                    <td><?php echo $clase['nombre'];?></td>
+                                                    <td class="align-middle"><a href="./dash.php?id=<?php echo $clase['id']?>&matricula=<?php echo $clase['matriculaMaestro']?>" method="POST" class="btn btn-info btn-block btn-sm">Ingresar</a></td>
+                                                </tr>
+                                                <?php $arrNombreMaterias[] = $clase['nombre']?>
+                                            <?php }?>
                                         <?php }?>
                                     </tbody>
                                 </table>
