@@ -64,7 +64,6 @@
                 $asistio=0;
             }
         }
-
         return $asistio;
     }
     //Fin de la funcion para obetner la hora de la clase
