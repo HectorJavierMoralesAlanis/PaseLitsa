@@ -17,7 +17,7 @@
         $resultadosEstudiantes=$daoEstudiantes->insertarConsulta($consultaEstudiantes,$parametrosEstudiantes);
 
         //Condicional para redirigir a la pagina indicada
-        if($resultadosProfesores!=0){
+        if($resultadosProfesores>0){
             echo $resultadosProfesores;
             //header("Location: http://157.245.253.25/Maestros/materias.php?matricula=$matricula");
         }else if($resultadosEstudiantes>0){
