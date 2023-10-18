@@ -151,6 +151,10 @@
             $parametrosHora = array("matricula"=>$matricula);
             $resultadoHora = $daoHora->insertarConsulta($consultaHora,$parametrosHora);
             
+            // Se establecen la hora
+            date_default_timezone_set('America/Monterrey');
+            $fecha=date('Y-m-d');
+            $hora=date('07:00:00');
             foreach($resultadosHora as $horas){
                 if($horas['horaInicio']>=$hora || $horas['horaFinal']<=$hora){
                     $grupo=$horas['grupo'];
@@ -159,7 +163,7 @@
             }
             $asistio = 1; 
             $daoPase = new DAO();
-            $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asitio,Fecha,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
+            $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asitio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:fecha,:hora,:grupo,:clase)";
             $parametrosPase = array("matricula"=>$matricula,"asistio"=>$asistio,"fecha"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
             $paseMaestro = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
             break;
