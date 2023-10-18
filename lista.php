@@ -11,7 +11,7 @@
     $maestrosLista = $daoProfesores->ejecutarConsulta($consultaProfesores);
 
     //Obtengo el valor para la asistencia
-    $valor = $_GET["uid"];
+    $valor = $_POST["uid"];
 
     //Inicio de la funcion para obtener el nombre de la clase
     function nombreClase($id){
