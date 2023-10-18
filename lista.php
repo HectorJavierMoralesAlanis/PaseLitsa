@@ -80,7 +80,6 @@
         date_default_timezone_set('America/Monterrey');
         $fecha = date('Y-m-d');
         $hora = date('H:i:s');
-        echo $hora;
         $asistencia=1;
 
         $daoInsertar = new DAO();
