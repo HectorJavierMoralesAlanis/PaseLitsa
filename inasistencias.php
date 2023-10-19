@@ -9,7 +9,8 @@
     $grupo = 2;
     $clase = "Matematicas";
     $daoEvento = new DAO();
-    $sentencia1 = "Create EVENT $nombre ON SCHEDULE EVERY $valor MINUTES STARTS '2023-10-19 02:49:00' DO BEGIN INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistencia,:dia,:hora,:grupo,:clase); END";
+    date_default_timezone_set('America/Monterrey');
+    $sentencia1 = "Create EVENT $nombre ON SCHEDULE EVERY $valor MINUTES STARTS '2023-10-19 02:57:00' DO BEGIN INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistencia,:dia,:hora,:grupo,:clase); END";
     $parametros = array("matricula"=>$matricula,"asistio"=>$asistencia,"dia"=>$dia,"grupo"=>$grupo,"clase"=>$clase);
     $daoEvento->insertarConsulta($sentencia1,$parametros);
 ?>
