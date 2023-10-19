@@ -185,4 +185,5 @@
         //Fin de la condicional para saber si utilizo tarjeta o contraseña
     }
     //Fin del ciclo para ingresar la asitencia del maestro
+
 ?>
