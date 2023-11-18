@@ -1,5 +1,7 @@
 <?php 
     include ('DAO.php');
+
+
     //Consulta para traer la lista de alumnos
     $daoAlumnos = new DAO();
     $consultaAlumnos = "SELECT * FROM Alumnos";
@@ -9,13 +11,81 @@
     $daoProfesores = new DAO();
     $consultaProfesores = "SELECT * FROM Profesor";
     $maestrosLista = $daoProfesores->ejecutarConsulta($consultaProfesores);
+    
+    //array para almacenar la informacion
+    $arrayAlumnos = array();
+    $arrayMaestros = array();
+
+    //llenar array de alumnos
+    /*foreach($alumnosLista as $alumno){
+        $infoAlumno = array(
+            'Matricula' => $alumno['Matricula'],
+            'Nombre' => $alumno['Nombre'],
+            'IDcard' => $alumno['IDcard'],
+            'Contra' => $alumno['Contra'],
+            'Clase' => $alumno['Clase'],
+            'Grupo' => $alumno['Grupo']
+        );
+        $arrayAlumnos[] = $infoAlumno;
+    }
+
+    //llenar array de  maestros
+    foreach($maestrosLista as $maestro){
+        $infoMaestro = array(
+            'Matricula' => $maestro['Matricula'],
+            'Nombre' => $maestro['Nombre'],
+            'IDcard' => $maestro['IDcard'],
+            'Contra' => $maestro['Contra'],
+            'Clase' => $maestro['Clase'],
+            'Grupo' => $maestro['Grupo']
+        );
+        $arrayMaestros[] = $infoMaestro;
+    }
+    */
 
     //Obtengo el valor para la asistencia
     $valor = $_POST["uid"];
-    echo 'hooa';
-    $fecha = new DateTime();
 
-    echo $fecha->format('Y-m-d H:i:s');
+    //funcion para determinar inasistencia
+    function determinarInasistencia($matricula, $clase, $grupo){
+        date_default_timezone_set('America/Monterrey');
+        $fecha = date('Y-m-d');
+        $dia = semanaDias($fecha);
+        $hora = date('H-i-s');
+        $asistencia = claseHora($dia, $hora, $clase);
+        $parametrosInsertar = "<?php echo $clase[nombre]?>&matricula=<?php echo $clase[matriculaMaestro]?>";
+
+        if($asistencia === 0){
+            $daoPaseLista = new DAO();
+            $consultaInsertar = "INSERT INTO Inasistencias (Matricula, Clase, Grupo, Dia, Hora) VALUES (:matricula, :clase, :grupo, :dia, hora)";
+           $daoPaseLista -> insertarConsulta($consultaInsertar, $parametrosInsertar);
+           return true;
+        }else{
+            return false;
+        }
+    }
+
+    //verificar inasistencia para cada alumno
+    foreach($arrayAlumnos as $alumno){
+        $matricula = $alumno['$matricula'];
+        $idClase = claseId($matricula);
+        $idGrupo = grupoId($matricula);
+
+        //verificar inasistencia llamando a la funcion
+        if(determinarInasistencia($matricula, $idClase, $idGrupo)){
+            echo "Inasistencia detectada para el alumno: " . $alumno['Nombre'] . "\n";
+        }
+    }
+
+    //verificar inasistencia para cada maestro
+    foreach($arrayMaestros as $maestro){
+        $matricula = $maestro['Matricula'];
+
+        //verificar inasistencia llamando a la funcion
+        if (determinarInasistencia($matricula, $maestro['Clase'], $maestro['Grupo'])){
+            echo "Inasistencia detectada para el maestro: " . $maestro['Nombre'] . "\n";
+        }
+    }
 
     //Inicio Funcion para Obtener el nombre del dia
     function semanaDias($dia){
@@ -55,7 +125,6 @@
 
     //Inicio de la funcion para obetener la hora de la clase 
     function claseHora($dia,$hora,$clase){
-
         $daoHora = new DAO();
         $consultaHora = "SELECT * FROM Semana WHERE Dia=:dia AND Clase=:clase";
         $parametrosHora = array("dia"=>$dia,"clase"=>$clase);
@@ -112,7 +181,7 @@
         $asistencia=claseHora($dia,$hora,$clase);
         //echo $asistencia;
         $daoInsertar = new DAO();
-        $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
+        $consultaInsertar = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase) VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
         $parametrosInsertar = array("matricula"=>$matricula,"asistio"=>$asistencia,"dia"=>$fecha,"hora"=>$hora,"grupo"=>$grupo,"clase"=>$clase);
         $daoInsertar->insertarConsulta($consultaInsertar,$parametrosInsertar);
     }
@@ -159,7 +228,7 @@
             break;
             
         }
-        //Fin de la condicional para saber si utilizo tarjetra o contraseña
+        //Fin de la condicional para saber si utilizo tarjeta o contraseña
     }
     //Fin del ciclo para ingresar la asistencia de los alumnos 
     

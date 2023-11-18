@@ -1,4 +1,12 @@
 <?php 
+
+
+
+
+
+
+
+
 /*
     include ('DAO.php');
     $nombre = "Ejemplo";
