@@ -12,7 +12,7 @@
 
     //Obtengo el valor para la asistencia
     $valor = $_POST["uid"];
-
+    echo "hooa";
     $fecha = date_create();
 
     echo date_timestamp_get($fecha);
