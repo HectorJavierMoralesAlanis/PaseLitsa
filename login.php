@@ -1,5 +1,7 @@
 <?php
     include ('DAO.php');
+    $fecha = date_create();
+    echo date_timestamp_get($fecha);
     if(isset($_POST['enviar'])){//isset($_POST['matricula'],$_POST['clave'])){
 
         $matricula = $_POST['matricula'];
