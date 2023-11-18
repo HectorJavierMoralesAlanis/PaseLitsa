@@ -13,9 +13,9 @@
     //Obtengo el valor para la asistencia
     $valor = $_POST["uid"];
     echo 'hooa';
-    $fecha = date_create();
+    $fecha = new DateTime();
 
-    echo date_timestamp_get($fecha);
+    echo $fecha->format('Y-m-d H:i:s');
 
     //Inicio Funcion para Obtener el nombre del dia
     function semanaDias($dia){
