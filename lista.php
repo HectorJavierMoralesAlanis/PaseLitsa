@@ -17,7 +17,7 @@
     $arrayMaestros = array();
 
     //llenar array de alumnos
-    foreach($alumnosLista as $alumno){
+    /*foreach($alumnosLista as $alumno){
         $infoAlumno = array(
             'Matricula' => $alumno['Matricula'],
             'Nombre' => $alumno['Nomsbre'],
@@ -41,7 +41,7 @@
         );
         $arrayMaestros[] = $infoMaestro;
     }
-    
+    */
 
     //Obtengo el valor para la asistencia
     $valor = $_POST["uid"];
@@ -68,7 +68,7 @@
 
     //verificar inasistencia para cada alumno
     foreach($arrayAlumnos as $alumno){
-        $matricula = $alumno['$matricula'];
+        $matricula = $alumno['Matricula'];
         $idClase = claseId($matricula);
         $idGrupo = grupoId($matricula);
 
