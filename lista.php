@@ -58,7 +58,7 @@
 
         if($asistencia === 0){
             $daoPaseLista = new DAO();
-            $consultaInsertar = "INSERT INTO Inasistencias (Matricula, Clase, Grupo, Dia, Hora) VALUES (:matricula, :clase, :grupo, :dia, hora)";
+            $consultaInsertar = "INSERT INTO Inasistencias (Matricula, Clase, Grupo, Dia, Hora)"."VALUES (:matricula, :clase, :grupo, :dia, hora)";
            $daoPaseLista -> insertarConsulta($consultaInsertar, $parametrosInsertar);
            return true;
         }else{
