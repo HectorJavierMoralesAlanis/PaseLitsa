@@ -51,9 +51,9 @@
         date_default_timezone_set('America/Monterrey');
         $fecha = date('Y-m-d');
         $dia = semanaDias($fecha);
-        $hora = date('H-i-s');
+        $hora = date('H:i:s');
         $asistencia = claseHora($dia, $hora, $clase);
-        $parametrosInsertar = "matricula={$matricula}&clase={$clase['nombre']}&grupo={$grupo}";
+        $parametrosInsertar = "matricula={$matricula}&clase={$clase}&grupo={$grupo}";
         /*"<?php echo $clase[nombre]?>&matricula=<?php echo $clase[matriculaMaestro]?>";*/
 
         if($asistencia === 0){
