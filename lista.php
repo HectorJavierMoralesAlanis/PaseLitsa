@@ -17,10 +17,10 @@
     $arrayMaestros = array();
 
     //llenar array de alumnos
-    /*foreach($alumnosLista as $alumno){
+    foreach($alumnosLista as $alumno){
         $infoAlumno = array(
             'Matricula' => $alumno['Matricula'],
-            'Nombre' => $alumno['Nombre'],
+            'Nombre' => $alumno['Nomsbre'],
             'IDcard' => $alumno['IDcard'],
             'Contra' => $alumno['Contra'],
             'Clase' => $alumno['Clase'],
@@ -41,7 +41,7 @@
         );
         $arrayMaestros[] = $infoMaestro;
     }
-    */
+    
 
     //Obtengo el valor para la asistencia
     $valor = $_POST["uid"];
@@ -53,8 +53,8 @@
         $dia = semanaDias($fecha);
         $hora = date('H:i:s');
         $asistencia = claseHora($dia, $hora, $clase);
-        $parametrosInsertar = "matricula={$matricula}&clase={$clase}&grupo={$grupo}";
-        /*"<?php echo $clase[nombre]?>&matricula=<?php echo $clase[matriculaMaestro]?>";*/
+        $parametrosInsertar = "<?php echo $clase[nombre]?>&matricula=<?php echo $clase[matriculaMaestro]?>";
+        //"matricula={$matricula}&clase={$clase}&grupo={$grupo}";
 
         if($asistencia === 0){
             $daoPaseLista = new DAO();
