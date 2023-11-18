@@ -53,7 +53,7 @@
         $dia = semanaDias($fecha);
         $hora = date('H-i-s');
         $asistencia = claseHora($dia, $hora, $clase);
-        $parametrosInsertar = "matricula={$matricula}&clase{'nombre']}&grupo={$grupo}";
+        $parametrosInsertar = "matricula={$matricula}&clase={$clase['nombre']}&grupo={$grupo}";
         /*"<?php echo $clase[nombre]?>&matricula=<?php echo $clase[matriculaMaestro]?>";*/
 
         if($asistencia === 0){
