@@ -71,7 +71,9 @@
                         $parametrosPase = array("matricula"=>$ai['Matricula'],"asistio"=>"0","dia"=>$fechaActual,"hora"=>$horaActual,"grupo"=>$ai['Grupo'],"clase"=>$clase['nombre']);
                         $paseDeLista == $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
                     }
-                }
+                }else if($paseDeLista > 0){
+                    echo "Ya esta";
+                };
                 //$daoInasistencias;
             }
         }
