@@ -16,10 +16,6 @@
     $consultaSemana = "SELECT * FROM Semana";
     $semana = $daoSemana->ejecutarConsulta($consultaSemana);
 
-    //Consulta para traer el pase de lista
-    $daoPase = new DAO();
-    $consultaPaseLista = "SELECT * FROM Pase_de_lista";
-
     //Consulta para traer la lista de clases
     $daoClase = new DAO();
     $consultaClase = "SELECT * FROM Clase";
@@ -41,6 +37,13 @@
         echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
         echo "<br>";
+        $daoPase = new DAO();
+        $consultaPase = "SELECT * FROM Semana"."WHERE Clase =: clase AND Dia=dia";
+        $parametrosPase = array("clase"=>$clase['nombre'],"dia"=>$dia);
+        $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+        foreach ($parametrosPase as $pase){
+            echo $pase['HoraInicio'];
+        }
         /*
         if($clase['Dia'] != $dia){
             echo $dia;
