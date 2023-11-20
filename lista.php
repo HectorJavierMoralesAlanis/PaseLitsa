@@ -61,6 +61,7 @@
                 //$daoInasistencias;
             }
         }
+        
         /*
         if($clase['Dia'] != $dia){
             echo $dia;
