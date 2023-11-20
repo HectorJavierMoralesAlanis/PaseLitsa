@@ -16,10 +16,17 @@
     $consultaSemana = "SELECT * FROM Semana";
     $semana = $daoSemana->ejecutarConsulta($consultaSemana);
 
+    //Consulta para traer el pase de lista
+    $daoPase = new DAO();
+    $consultaPaseLista = "SELECT * FROM Pase_de_lista";
+
     //Hora y Fecha actual
     $horaActual = date('H:i:s');
     $fechaActual = date('Y-m-d');
     $dia = semanaDias($fechaActual);
+    if (in_array($dia,$semana)){
+        echo "esta y si jalo";
+    }
     foreach ($semana as $clase){
         echo "<br>_______________ <br>";
         echo $clase ['Dia'];
@@ -28,6 +35,7 @@
         echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
         echo "<br>";
+
         if($clase['Dia'] != $dia){
             echo $dia;
             if($horaActual>=$clase['Horafinal']){
