@@ -57,12 +57,12 @@
                 $consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=asistencia";
                 $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre'],"asistencia"=>"0");
                 $paseDeLista = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
-                echo $paseDeLista;
+                //echo $paseDeLista;
                 $daoAlumnosIn = new DAO();
                 $consultaAlumnosIn = "SELECT * FROM Alumnos WHERE Clase=:clase";
                 $parametrosAlumnosIn = array("clase"=>$clase['nombre']);
                 $alumnosInasistencia = $daoAlumnosIn->ejecutarConsulta($consultaAlumnosIn,$parametrosAlumnosIn);
-                echo count($paseDeLista);
+                //echo count($paseDeLista);
                 if($paseDeLista == 0){
                     echo "adoskfnj";
                     foreach($alumnosInasistencia as $ai){
