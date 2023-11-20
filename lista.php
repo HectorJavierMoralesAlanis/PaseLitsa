@@ -26,6 +26,7 @@
     $dia = semanaDias($fechaActual);
     if (in_array($dia,$semana)){
         echo "esta y si jalo";
+        
     }
     foreach ($semana as $clase){
         echo "<br>_______________ <br>";
