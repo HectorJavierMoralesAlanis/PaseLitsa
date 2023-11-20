@@ -27,10 +27,11 @@
         echo $horaActual;
         echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
+        echo "<br>";
         if($clase['Dia'] != $dia){
             echo $dia;
             if($clase['Horafinal']!=$horaActual){
-                echo "Si jalo si no es igual";
+                echo " Si jalo si no es igual";
             }
         }
     }
