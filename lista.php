@@ -55,7 +55,7 @@
                 echo "<br>";
                 $daoPase = new DAO();
                 $consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=asistencia";
-                $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre'],"asistencia"=>"1");
+                $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre'],"asistencia"=>"0");
                 $paseDeLista = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
                 echo $paseDeLista;
                 $daoAlumnosIn = new DAO();
