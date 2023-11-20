@@ -62,7 +62,7 @@
                 $consultaAlumnosIn = "SELECT * FROM Alumnos WHERE Clase=:clase";
                 $parametrosAlumnosIn = array("clase"=>$clase['nombre']);
                 $alumnosInasistencia = $daoAlumnosIn->ejecutarConsulta($consultaAlumnosIn,$parametrosAlumnosIn);
-                
+                echo $paseDeLista;
                 if($paseDeLista == 0){
                     echo "adoskfnj";
                     foreach($alumnosInasistencia as $ai){
