@@ -50,7 +50,7 @@
         foreach ($paseDiaSemana as $pase){
             /*echo $pase['HoraInicio'];
             echo "<br>___________________<br>";*/
-            if($horaActual >= $pase['HoraFinal'] && $horaActual <= '13:00:00'){
+            if($horaActual >= $pase['HoraFinal'] && $horaActual <= '12:00:00'){
                 //echo "dkjsbf";
                 //echo "<br>";
                 $daoPase = new DAO();
