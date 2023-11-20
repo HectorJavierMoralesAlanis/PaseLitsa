@@ -54,7 +54,7 @@
                 echo "dkjsbf";
                 echo "<br>";
                 $daoPase = new DAO();
-                $consultaPase = "SELECT * FROM Pase_De_Lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=1";
+                $consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=1";
                 $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre']);
                 $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
                 echo $paseDeLista;
