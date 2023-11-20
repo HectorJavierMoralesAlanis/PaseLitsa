@@ -30,6 +30,7 @@
     //}
     
     foreach ($clases as $clase){
+        echo $dia;
         echo "<br>_______________ <br>";
         echo $clase ['nombre'];
         echo "          ";
