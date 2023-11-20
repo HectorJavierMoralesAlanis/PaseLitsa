@@ -22,7 +22,7 @@
     $clases = $daoClase->ejecutarConsulta($consultaClase);
 
     //Hora y Fecha actual
-    $horaActual = date('H:i:s');
+    $horaActual = date('08:00:00');
     $fechaActual = date('Y-m-d');
     $dia = semanaDias($fechaActual);
     //if (in_array($dia,$semana)){
@@ -46,7 +46,7 @@
         foreach ($paseDeLista as $pase){
             echo $pase['HoraInicio'];
             echo "<br>___________________<br>";
-            if($horaActual >= $pase['HoraInicio']){
+            if($horaActual >= $pase['HoraFinal']){
                 echo "dkjsbf";
             }
         }
