@@ -35,8 +35,9 @@
         echo "          ";
         echo $horaActual;
         echo "<br>_______________<br>";
-        echo $clase ['HoraFinal'];
         
+        echo $clase ['HoraFinal'];
+
         echo "<br>";
 
         $daoDiaSemana = new DAO();
