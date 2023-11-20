@@ -1,7 +1,5 @@
 <?php 
     include ('DAO.php');
-
-
     //Consulta para traer la lista de alumnos
     $daoAlumnos = new DAO();
     $consultaAlumnos = "SELECT * FROM Alumnos";
@@ -12,9 +10,23 @@
     $consultaProfesores = "SELECT * FROM Profesor";
     $maestrosLista = $daoProfesores->ejecutarConsulta($consultaProfesores);
     
+
+    //Consulta para traer la lista de de los dias de la semana
+    $daoSemana = new DAO();
+    $consultaSemana = "SELECT * FROM Semana";
+    $semana = $daoSemana->ejecutarConsulta($consultaSemana);
+
+    //Hora y Fecha actual
+    $horaActual = date('H:i:s');
+    $fechaActual = date('Y-m-d');
+    foreach ($semana as $clase){
+        echo $clase;
+        echo "<br>";
+        echo $horaActual;
+    }
     //array para almacenar la informacion
-    $arrayAlumnos = array();
-    $arrayMaestros = array();
+   // $arrayAlumnos = array();
+    //$arrayMaestros = array();
 
     //llenar array de alumnos
     /*foreach($alumnosLista as $alumno){
@@ -47,7 +59,7 @@
     $valor = $_POST["uid"];
 
     //funcion para determinar inasistencia
-    function determinarInasistencia($matricula, $clase, $grupo){
+    /*function determinarInasistencia($matricula, $clase, $grupo){
         date_default_timezone_set('America/Monterrey');
         $fecha = date('Y-m-d');
         $dia = semanaDias($fecha);
@@ -64,10 +76,10 @@
         }else{
             return false;
         }
-    }
+    }*/
 
     //verificar inasistencia para cada alumno
-    foreach($arrayAlumnos as $alumno){
+    /*foreach($arrayAlumnos as $alumno){
         $matricula = $alumno['Matricula'];
         $idClase = claseId($matricula);
         $idGrupo = grupoId($matricula);
@@ -76,7 +88,7 @@
         if(determinarInasistencia($matricula, $idClase, $idGrupo)){
             echo "Inasistencia detectada para el alumno: " . $alumno['Nombre'] . "\n";
         }
-    }
+    }*/
 
     //verificar inasistencia para cada maestro
     foreach($arrayMaestros as $maestro){
