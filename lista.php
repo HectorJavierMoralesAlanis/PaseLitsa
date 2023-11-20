@@ -47,7 +47,6 @@
         $parametrosDiaSemana = array("clase"=>$clase['nombre'],"dia"=>$dia);
         $paseDiaSemana = $daoDiaSemana->ejecutarConsulta($consultaPase,$parametrosPase);
         //echo $paseDeLista;
-
         foreach ($paseDiaSemana as $pase){
             echo $pase['HoraInicio'];
             echo "<br>___________________<br>";
