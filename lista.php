@@ -28,27 +28,38 @@
     //if (in_array($dia,$semana)){
     //    echo "esta y si jalo";        
     //}
-    
     foreach ($clases as $clase){
         echo $dia;
+        
         echo "<br>_______________ <br>";
         echo $clase ['nombre'];
         echo "          ";
         echo $horaActual;
+        
         echo "<br>_______________<br>";
+        
         echo $clase ['HoraFinal'];
+
         echo "<br>";
-        $daoPase = new DAO();
-        $consultaPase = "SELECT * FROM Semana WHERE Clase=:clase AND Dia=:dia";
-        $parametrosPase = array("clase"=>$clase['nombre'],"dia"=>$dia);
-        $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+
+        $daoDiaSemana = new DAO();
+        $consultaDiaSemana = "SELECT * FROM Semana WHERE Clase=:clase AND Dia=:dia";
+        $parametrosDiaSemana = array("clase"=>$clase['nombre'],"dia"=>$dia);
+        $paseDiaSemana = $daoDiaSemana->ejecutarConsulta($consultaPase,$parametrosDiaSemana);
         //echo $paseDeLista;
-        foreach ($paseDeLista as $pase){
+
+        foreach ($paseDiaSemana as $pase){
             echo $pase['HoraInicio'];
             echo "<br>___________________<br>";
-            if($horaActual >= $pase['HoraFinal'] AND $horaActual <= '10:00:00'){
+            if($horaActual >= $pase['HoraFinal'] && $horaActual <= '10:00:00'){
                 echo "dkjsbf";
                 echo "<br>";
+                $daoPase = new DAO();
+                $consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=1";
+                $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre']);
+                $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+                echo $paseDeLista;
+                //$daoInasistencias;
             }
         }
         /*
