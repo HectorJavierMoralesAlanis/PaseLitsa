@@ -58,6 +58,18 @@
                 $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre']);
                 $paseDeLista = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
                 echo $paseDeLista;
+                $daoAlumnosIn = new DAO();
+                $consultaAlumnosIn = "SELECT * FROM Alumnos WHERE Clase=:clase";
+                $parametrosAlumnosIn = array("clase"=>$clase['nombre']);
+                $alumnosInasistencia = $daoAlumnos->ejecutarConsulta($consultaAlumnosIn,$parametrosAlumnosIn);
+
+                if($paseDeLista == 0){
+                    foreach($alumnosInasistencia as $ai){
+                        $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asitio,:dia,:hora,:grupo,:clase)";
+                        $parametrosPase = array("matricula"=>$ai['matricula'],"asistio"=>"1","dia"=>$fechaActual,"hora"=>$horaActual,"grupo"=>$ai['grupo'],"clase"=>$clase['nombre']);
+                        $paseDeLista == $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+                    }
+                }
                 //$daoInasistencias;
             }
         }
