@@ -20,7 +20,7 @@
     $horaActual = date('H:i:s');
     $fechaActual = date('Y-m-d');
     foreach ($semana as $clase){
-        echo $clase;
+        echo $clase ['Dia'];
         echo "<br>";
         echo $horaActual;
     }
