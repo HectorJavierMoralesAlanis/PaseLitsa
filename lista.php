@@ -46,6 +46,9 @@
         foreach ($paseDeLista as $pase){
             echo $pase['HoraInicio'];
             echo "<br>___________________<br>";
+            if($horaActual >= $pase['HoraInicio']){
+                echo "dkjsbf";
+            }
         }
         /*
         if($clase['Dia'] != $dia){
