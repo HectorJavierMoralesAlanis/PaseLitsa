@@ -22,7 +22,7 @@
     $clases = $daoClase->ejecutarConsulta($consultaClase);
 
     //Hora y Fecha actual
-    $horaActual = date('08:00:00');
+    $horaActual = date('12:00:00');
     $fechaActual = date('Y-m-d');
     $dia = semanaDias($fechaActual);
     //if (in_array($dia,$semana)){
