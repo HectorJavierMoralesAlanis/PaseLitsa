@@ -48,6 +48,7 @@
             echo "<br>___________________<br>";
             if($horaActual >= $pase['HoraFinal'] AND $horaActual <= '10:00:00'){
                 echo "dkjsbf";
+                echo "<br>";
             }
         }
         /*
