@@ -32,6 +32,7 @@
     //if (in_array($dia,$semana)){
     //    echo "esta y si jalo";        
     //}
+    
     foreach ($clases as $clase){
         echo "<br>_______________ <br>";
         echo $clase ['nombre'];
