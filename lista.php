@@ -30,7 +30,7 @@
         echo "<br>";
         if($clase['Dia'] != $dia){
             echo $dia;
-            if($clase['Horafinal']>=$horaActual){
+            if($horaActual>=$clase['Horafinal']){
                 echo " Si jalo si no es igual";
             }
         }
