@@ -36,8 +36,9 @@
         echo $horaActual;
         echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
-        echo "<br>";
         
+        echo "<br>";
+
         $daoDiaSemana = new DAO();
         $consultaDiaSemana = "SELECT * FROM Semana WHERE Clase=:clase AND Dia=:dia";
         $parametrosDiaSemana = array("clase"=>$clase['nombre'],"dia"=>$dia);
