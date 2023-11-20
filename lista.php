@@ -68,7 +68,7 @@
                     foreach($alumnosInasistencia as $ai){
                         echo $ai['nombre'];
                         $consultaPase = "INSERT INTO Pase_de_lista (Matricula,Asistio,Dia,Hora,Grupo,Clase)"."VALUES (:matricula,:asistio,:dia,:hora,:grupo,:clase)";
-                        $parametrosPase = array("matricula"=>$ai['matricula'],"asistio"=>"0","dia"=>$fechaActual,"hora"=>$horaActual,"grupo"=>$ai['grupo'],"clase"=>$clase['nombre']);
+                        $parametrosPase = array("matricula"=>$ai['Matricula'],"asistio"=>"0","dia"=>$fechaActual,"hora"=>$horaActual,"grupo"=>$ai['Grupo'],"clase"=>$clase['nombre']);
                         $paseDeLista == $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
                     }
                 }
