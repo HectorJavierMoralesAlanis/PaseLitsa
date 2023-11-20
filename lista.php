@@ -61,7 +61,7 @@
                 $daoAlumnosIn = new DAO();
                 $consultaAlumnosIn = "SELECT * FROM Alumnos WHERE Clase=:clase";
                 $parametrosAlumnosIn = array("clase"=>$clase['nombre']);
-                $alumnosInasistencia = $daoAlumnos->ejecutarConsulta($consultaAlumnosIn,$parametrosAlumnosIn);
+                $alumnosInasistencia = $daoAlumnosIn->ejecutarConsulta($consultaAlumnosIn,$parametrosAlumnosIn);
 
                 if($paseDeLista == 0){
                     foreach($alumnosInasistencia as $ai){
