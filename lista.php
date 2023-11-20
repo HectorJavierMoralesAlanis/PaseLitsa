@@ -20,11 +20,12 @@
     $horaActual = date('H:i:s');
     $fechaActual = date('Y-m-d');
     foreach ($semana as $clase){
-        echo "_______________";
+        echo "_______________ <br>";
         echo $clase ['Dia'];
         echo "          ";
         echo $horaActual;
-        echo "_______________";
+        echo "_______________<br>";
+        echo $clase ['HoraFinal'];
         echo "<br>";
     }
     //array para almacenar la informacion
