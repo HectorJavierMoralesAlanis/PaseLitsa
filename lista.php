@@ -56,7 +56,7 @@
                 $daoPase = new DAO();
                 $consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=1";
                 $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre']);
-                $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+                $paseDeLista = $daoPase->insertarConsulta($consultaPase,$parametrosPase);
                 echo $paseDeLista;
                 //$daoInasistencias;
             }
