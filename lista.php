@@ -20,29 +20,33 @@
     $daoPase = new DAO();
     $consultaPaseLista = "SELECT * FROM Pase_de_lista";
 
+    //Consulta para traer la lista de clases
+    $daoClase = new DAO();
+    $consultaClase = "SELECT * FROM Clase";
+    $clases = $daoClase->ejecutarConsulta($consultaClase);
+
     //Hora y Fecha actual
     $horaActual = date('H:i:s');
     $fechaActual = date('Y-m-d');
     $dia = semanaDias($fechaActual);
-    if (in_array($dia,$semana)){
-        echo "esta y si jalo";
-        
-    }
-    foreach ($semana as $clase){
+    //if (in_array($dia,$semana)){
+    //    echo "esta y si jalo";        
+    //}
+    foreach ($clases as $clase){
         echo "<br>_______________ <br>";
-        echo $clase ['Dia'];
+        echo $clase ['nombre'];
         echo "          ";
         echo $horaActual;
         echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
         echo "<br>";
-
+        /*
         if($clase['Dia'] != $dia){
             echo $dia;
             if($horaActual>=$clase['Horafinal']){
                 echo " Si jalo si no es igual";
             }
-        }
+        }*/
     }
     //array para almacenar la informacion
    // $arrayAlumnos = array();
