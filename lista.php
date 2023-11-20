@@ -42,7 +42,7 @@
         $consultaPase = "SELECT * FROM Semana"."WHERE Clase =: clase AND Dia=dia";
         $parametrosPase = array("clase"=>$clase['nombre'],"dia"=>$dia);
         $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
-        foreach ($parametrosPase as $pase){
+        foreach ($paseDeLista as $pase){
             echo $pase['HoraInicio'];
         }
         /*
