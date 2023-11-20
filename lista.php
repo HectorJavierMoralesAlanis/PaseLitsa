@@ -53,11 +53,11 @@
             if($horaActual >= $pase['HoraFinal']){ //&& $horaActual <= '10:00:00'){
                 echo "dkjsbf";
                 echo "<br>";
-                $daoPase = new DAO();
-                $consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=1";
-                $parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre']);
-                $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
-                echo $paseDeLista;
+                //$daoPase = new DAO();
+                //$consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase AND Asistio=1";
+                //$parametrosPase = array("fecha"=>$fechaActual,"clase"=>$clase['nombre']);
+                //$paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+                //echo $paseDeLista;
                 //$daoInasistencias;
             }
         }
