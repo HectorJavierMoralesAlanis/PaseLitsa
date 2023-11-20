@@ -19,14 +19,17 @@
     //Hora y Fecha actual
     $horaActual = date('H:i:s');
     $fechaActual = date('Y-m-d');
+    $dia = semanaDias($fechaActual);
     foreach ($semana as $clase){
-        echo "_______________ <br>";
+        echo "<br>_______________ <br>";
         echo $clase ['Dia'];
         echo "          ";
         echo $horaActual;
-        echo "_______________<br>";
+        echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
-        echo "<br>";
+        if($clase['Horafinal']!=$horaActual){
+            echo "Si jalo si no es igual";
+        }
     }
     //array para almacenar la informacion
    // $arrayAlumnos = array();
