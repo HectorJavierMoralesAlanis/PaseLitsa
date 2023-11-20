@@ -21,8 +21,9 @@
     $fechaActual = date('Y-m-d');
     foreach ($semana as $clase){
         echo $clase ['Dia'];
-        echo "<br>";
+        echo " ";
         echo $horaActual;
+        echo "<br>";
     }
     //array para almacenar la informacion
    // $arrayAlumnos = array();
