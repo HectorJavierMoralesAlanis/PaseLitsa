@@ -45,6 +45,7 @@
         //echo $paseDeLista;
         foreach ($paseDeLista as $pase){
             echo $pase['HoraInicio'];
+            echo "<br>";
         }
         /*
         if($clase['Dia'] != $dia){
