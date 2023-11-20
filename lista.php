@@ -38,17 +38,19 @@
         echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
         echo "<br>";
-        $daoPase = new DAO();
-        $consultaPase = "SELECT * FROM Semana WHERE Clase=:clase AND Dia=:dia";
-        $parametrosPase = array("clase"=>$clase['nombre'],"dia"=>$dia);
-        $paseDeLista = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
+        $daoDiaSemana = new DAO();
+        $consultaDiaSemana = "SELECT * FROM Semana WHERE Clase=:clase AND Dia=:dia";
+        $parametrosDiaSemana = array("clase"=>$clase['nombre'],"dia"=>$dia);
+        $paseDiaSemana = $daoPase->ejecutarConsulta($consultaPase,$parametrosPase);
         //echo $paseDeLista;
-        foreach ($paseDeLista as $pase){
+        foreach ($paseDiaSemana as $pase){
             echo $pase['HoraInicio'];
             echo "<br>___________________<br>";
             if($horaActual >= $pase['HoraFinal'] AND $horaActual <= '10:00:00'){
                 echo "dkjsbf";
                 echo "<br>";
+                
+                //$daoInasistencias;
             }
         }
         /*
