@@ -28,9 +28,9 @@
         echo "<br>_______________<br>";
         echo $clase ['HoraFinal'];
         echo "<br>";
-        if($clase['Dia'] != $dia){
+        if($clase['Dia'] == $dia){
             echo $dia;
-            if($clase['Horafinal']!=$horaActual){
+            if($clase['Horafinal']>=$horaActual){
                 echo " Si jalo si no es igual";
             }
         }
