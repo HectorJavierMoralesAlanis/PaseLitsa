@@ -34,6 +34,7 @@
         echo $clase ['nombre'];
         echo "          ";
         echo $horaActual;
+        
         echo "<br>_______________<br>";
         
         echo $clase ['HoraFinal'];
