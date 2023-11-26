@@ -1,8 +1,8 @@
 import requests
 import datetime
-import pymysql
+#import pymysql
 from pytz import timezone  # Asegúrate de tener instalado el paquete 'pytz'
-from daemonize import Daemonize
+#from daemonize import Daemonize
 
 # URL del script PHP
 url_php_script = "http://157.245.253.25/lista.php"
