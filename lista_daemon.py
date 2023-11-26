@@ -67,7 +67,7 @@ def ejecutar_script():
 # Configuración del daemon
 #pid = "/tmp/inasistencia_daemon.pid"
 #daemon = Daemonize(app="inasistencia_daemon", pid=pid, action=ejecutar_script)
-
+ejecutar_script()
 # Iniciar el daemon
 #daemon.start()
 
