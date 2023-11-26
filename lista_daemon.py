@@ -29,12 +29,12 @@ rangos_tiempo_manana = [
 dias_inasistencia = ["Lun", "Mar", "Mié", "Jue", "Vie"]
 
 # Configuración de la conexión a la base de datos
-conexion = pymysql.connect(
+"""conexion = pymysql.connect(
     host="localhost",  # Cambia esto al host correcto
     user="Admin2",  # Cambia esto al usuario correcto
     password="Pase_Asistencia",  # Cambia esto a la contraseña correcta
     database="lista"  # Cambia esto a la base de datos correcta
-)
+)"""
 
 def ejecutar_script():
     try:
@@ -65,11 +65,11 @@ def ejecutar_script():
         print(f"Error al realizar la solicitud: {e}")
 
 # Configuración del daemon
-pid = "/tmp/inasistencia_daemon.pid"
-daemon = Daemonize(app="inasistencia_daemon", pid=pid, action=ejecutar_script)
+#pid = "/tmp/inasistencia_daemon.pid"
+#daemon = Daemonize(app="inasistencia_daemon", pid=pid, action=ejecutar_script)
 
 # Iniciar el daemon
-daemon.start()
+#daemon.start()
 
 
 
