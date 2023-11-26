@@ -29,30 +29,13 @@
     //    echo "esta y si jalo";        
     //}
     foreach ($clases as $clase){
-       /* echo $dia;
-        
-        echo "<br>_______________ <br>";
-        echo $clase ['nombre'];
-        echo "          ";
-        echo $horaActual;
-        
-        echo "<br>_______________<br>";
-        
-        echo $clase ['HoraFinal'];
-
-        echo "<br>";*/
 
         $daoDiaSemana = new DAO();
         $consultaDiaSemana = "SELECT * FROM Semana WHERE Clase=:clase AND Dia=:dia";
         $parametrosDiaSemana = array("clase"=>$clase['nombre'],"dia"=>$dia);
         $paseDiaSemana = $daoDiaSemana->ejecutarConsulta($consultaDiaSemana,$parametrosDiaSemana);
-        //echo $paseDeLista;
         foreach ($paseDiaSemana as $pase){
-            /*echo $pase['HoraInicio'];
-            echo "<br>___________________<br>";*/
             if($horaActual >= $pase['HoraFinal'] && $horaActual <= '12:00:00'){
-                //echo "dkjsbf";
-                //echo "<br>";
                 
                 $daoPase = new DAO();
                 $consultaPase = "SELECT * FROM Pase_de_lista WHERE Dia=:fecha AND Clase=:clase";
@@ -75,16 +58,8 @@
                 }else if($paseDeLista > 0){
                     echo "Ya esta";
                 };
-                //$daoInasistencias;
             }
         }
-        /*
-        if($clase['Dia'] != $dia){
-            echo $dia;
-            if($horaActual>=$clase['Horafinal']){
-                echo " Si jalo si no es igual";
-            }
-        }*/
     }
     //array para almacenar la informacion
    // $arrayAlumnos = array();
