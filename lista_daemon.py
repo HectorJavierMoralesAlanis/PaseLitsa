@@ -114,7 +114,6 @@ try:
     # Example SELECT query
     query = "SELECT * FROM Alumnos"
     cursor.execute(query)
-
     # Fetch all rows from the result set
     result = cursor.fetchall()
 
