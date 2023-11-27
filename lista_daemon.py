@@ -99,8 +99,8 @@ import mysql.connector
 db_config = {
     # Replace these values with your MySQL server credentials
     'host': 'localhost',
-    'user': 'Admin',
-    'password': 'Pase_Asistencia',
+    'user': 'admin',
+    'password': '3d54d0c824c2c3f7b4415dff96ed0fbeb752c151b68224dc',
     'database': 'lista'
 }
 
