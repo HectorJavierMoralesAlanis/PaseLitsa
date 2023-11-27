@@ -6,6 +6,7 @@ import subprocess
 aux=0
 
 ruta = "/var/www/html/lista_daemon.py"
+
 #time.sleep(60)
 
 while aux == 0:
