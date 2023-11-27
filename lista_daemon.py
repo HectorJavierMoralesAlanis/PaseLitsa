@@ -112,7 +112,7 @@ try:
     cursor = connection.cursor()
 
     # Example SELECT query
-    query = "SELECT * FROM alumnos"
+    query = "SELECT * FROM Alumnos"
     cursor.execute(query)
 
     # Fetch all rows from the result set
