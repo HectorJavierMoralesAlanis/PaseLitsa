@@ -9,4 +9,4 @@ ruta = "/var/www/html/lista_daemon.php"
 while aux == 0:
     time.sleep(1)
     #time.sleep(86400)
-    subprocess.run(['php',ruta])
+    subprocess.run(['python3',ruta])
