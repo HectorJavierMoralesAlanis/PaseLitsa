@@ -4,6 +4,7 @@ print('getcwd: ', os.getcwd())
 print('__file__:   ',__file__)
 import subprocess
 aux=0
+
 ruta = "/var/www/html/lista_daemon.py"
 #time.sleep(60)
 
