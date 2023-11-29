@@ -23,7 +23,7 @@ try:
     cursor = connection.cursor()
 
     # Example SELECT query
-    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0','[value-4]','[value-5]','[value-6]','[value-7]')"
+    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0',str_time,str_time,'1','Matematicas')"
     cursor.execute(query)
     # Fetch all rows from the result set
     result = cursor.fetchall()
