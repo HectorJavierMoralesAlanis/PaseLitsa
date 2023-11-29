@@ -17,7 +17,6 @@ db_config = {
 try:
     # Establish a connection to the MySQL server
     connection = mysql.connector.connect(**db_config)
-
     # Create a cursor object to interact with the database
     cursor = connection.cursor()
 
