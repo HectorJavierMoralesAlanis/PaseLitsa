@@ -5,7 +5,9 @@ dt = datetime.now()
 ts = datetime.timestamp(dt)
 
 str_date_time = dt.strftime("%d-%m-%Y")
+print(str_date_time)
 str_time = dt.strftime("%I%p %M:%S")
+print(str_time)
 # Replace these values with your own database connection details
 db_config = {
     # Replace these values with your MySQL server credentials
