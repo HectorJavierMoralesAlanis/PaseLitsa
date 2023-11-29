@@ -4,10 +4,10 @@ import mysql.connector
 dt = datetime.now()
 ts = datetime.timestamp(dt)
 
-str_date_time = dt.strftime("%d-%m-%Y")
-print(str_date_time)
-str_time = dt.strftime("%I %M:%S")
-print(str_time)
+str_date_time = dt.time("%d-%m-%Y")
+#print(str_date_time)
+str_time = dt.time("%I %M:%S")
+#print(str_time)
 # Replace these values with your own database connection details
 db_config = {
     # Replace these values with your MySQL server credentials
