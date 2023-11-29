@@ -17,6 +17,7 @@ db_config = {
     'database': 'lista'
 }
 
+
 try:
     # Establish a connection to the MySQL server
     connection = mysql.connector.connect(**db_config)
