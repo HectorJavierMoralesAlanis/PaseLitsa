@@ -5,7 +5,7 @@ import mysql.connector
 #dt = datetime.now()
 #ts = datetime.timestamp(dt)
 fecha = date.today()
-print(fecha)
+print(type(fecha))
 hora = datetime.now().time()
 print(hora)
 # Replace these values with your own database connection details
