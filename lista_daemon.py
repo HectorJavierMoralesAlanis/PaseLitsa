@@ -4,10 +4,10 @@ import mysql.connector
 #dt = datetime.now()
 #ts = datetime.timestamp(dt)
 
-str_date_time = date.today()
-print(str_date_time)
-#str_time = dt.datetime("%I %M:%S")
-#print(str_time)
+fecha = date.today()
+print(fecha)
+hora = date.now().time()
+print(hora)
 # Replace these values with your own database connection details
 db_config = {
     # Replace these values with your MySQL server credentials
@@ -26,7 +26,7 @@ try:
     cursor = connection.cursor()
 
     # Example SELECT query
-    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0','{dt.}','{str_time}','1','Matematicas')"
+    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0','{fecha}','{hora}','1','Matematicas')"
     cursor.execute(query)
     # Fetch all rows from the result set
     result = cursor.fetchall()
