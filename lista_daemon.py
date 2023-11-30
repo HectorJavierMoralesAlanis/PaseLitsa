@@ -4,8 +4,8 @@ import mysql.connector
 dt = datetime.now()
 ts = datetime.timestamp(dt)
 
-#str_date_time = dt.datetime("%d-%m-%Y")
-#print(str_date_time)
+str_date_time = dt.datetime("%d-%m-%Y")
+print(type(str_date_time))
 #str_time = dt.datetime("%I %M:%S")
 #print(str_time)
 # Replace these values with your own database connection details
