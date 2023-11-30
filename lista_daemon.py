@@ -4,7 +4,7 @@ import mysql.connector
 #dt = datetime.now()
 #ts = datetime.timestamp(dt)
 
-str_date_time = date.today("%d-%m-%Y")
+str_date_time = date.today()
 print(type(str_date_time))
 #str_time = dt.datetime("%I %M:%S")
 #print(str_time)
