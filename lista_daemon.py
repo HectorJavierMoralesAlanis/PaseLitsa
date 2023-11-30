@@ -5,7 +5,9 @@ dt = datetime.now()
 ts = datetime.timestamp(dt)
 
 str_date_time = dt.datetime("%d-%m-%Y")
-#print(str_date_time)
+print(type(str_date_time))
+fecha = dt.strptime(str_data_time,"%Y-%m-%d")
+print(type(fecha))
 str_time = dt.datetime("%I %M:%S")
 #print(str_time)
 # Replace these values with your own database connection details
@@ -26,7 +28,7 @@ try:
     cursor = connection.cursor()
 
     # Example SELECT query
-    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0','{str_date_time}','{str_time}','1','Matematicas')"
+    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0','{dt.datetime}','{str_time}','1','Matematicas')"
     cursor.execute(query)
     # Fetch all rows from the result set
     result = cursor.fetchall()
