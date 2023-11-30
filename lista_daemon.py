@@ -6,7 +6,7 @@ import mysql.connector
 
 fecha = date.today()
 print(fecha)
-hora = date.now().time()
+hora = date.today().time()
 print(hora)
 # Replace these values with your own database connection details
 db_config = {
