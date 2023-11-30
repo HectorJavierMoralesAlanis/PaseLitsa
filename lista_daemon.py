@@ -3,7 +3,7 @@ import mysql.connector
 
 #dt = datetime.now()
 #ts = datetime.timestamp(dt)
-fecha = datetime.today()
+fecha = date.today()
 print(fecha)
 hora = datetime.now().time()
 print(hora)
