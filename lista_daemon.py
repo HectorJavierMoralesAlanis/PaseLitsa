@@ -1,10 +1,9 @@
-from datetime import date
+from datetime import datetime
 import mysql.connector
 
 #dt = datetime.now()
 #ts = datetime.timestamp(dt)
-
-fecha = date.today()
+fecha = datetime.today()
 print(fecha)
 hora = datetime.now().time()
 print(hora)
