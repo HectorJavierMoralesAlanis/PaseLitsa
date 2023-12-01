@@ -26,8 +26,8 @@ try:
     cursor = connection.cursor()
 
     # Example SELECT query
-    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0','{fecha}','{hora}','1','Matematicas')"
-    cursor.execute(query)
+    query = "INSERT INTO `Pase_de_lista`(`Matricula`, `Asistio`, `Dia`, `Hora`, `Grupo`, `Clase`) VALUES ('2030103','0','DATE(%s)','TIME(%s)','1','Matematicas')"
+    cursor.execute(query,(date(fecha),time(hora)))
     # Fetch all rows from the result set
     result = cursor.fetchall()
 
